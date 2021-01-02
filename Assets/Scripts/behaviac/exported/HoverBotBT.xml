@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: HoverBotBT.xml-->
+<behavior name="HoverBotBT" agenttype="HoverBotAgent" version="5">
+  <node class="Selector" id="0">
+    <node class="Sequence" id="2">
+      <node class="Condition" id="3">
+        <property Operator="Equal" />
+        <property Opl="Self.HoverBotAgent::HasTarget()" />
+        <property Opr="const bool false" />
+      </node>
+      <node class="Action" id="1">
+        <property Method="Self.HoverBotAgent::DoPatrol()" />
+        <property ResultOption="BT_INVALID" />
+      </node>
+    </node>
+    <node class="Selector" id="5">
+      <node class="Sequence" id="4">
+        <node class="Condition" id="6">
+          <property Operator="GreaterEqual" />
+          <property Opl="Self.HoverBotAgent::GetTargetDist()" />
+          <property Opr="const float 10" />
+        </node>
+        <node class="Action" id="7">
+          <property Method="Self.HoverBotAgent::DoChase()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+      <node class="Sequence" id="9">
+        <node class="Action" id="8">
+          <property Method="Self.HoverBotAgent::DoAttack()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+        <node class="Action" id="10">
+          <property Method="Self.HoverBotAgent::DoChase()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+    </node>
+  </node>
+</behavior>
